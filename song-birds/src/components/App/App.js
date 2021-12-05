@@ -15,7 +15,7 @@ function App() {
     <div className="section-app">
       <Header/>
       <Sections/>
-      <Player birdNumber ={setbirdNumber}/>
+      <Player birdNumber ={birdNumber}/>
       <Mainpage birdNumber ={birdNumber}/>
     </div>
   );

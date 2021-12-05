@@ -1,3 +1,4 @@
+import React, {useRef} from 'react';
 import './Player.scss';
 import { useSelector, useDispatch } from "react-redux"
 import { setApplicationState } from '../../actions/actions-creator';
@@ -8,32 +9,46 @@ import 'react-h5-audio-player/lib/styles.css';
 import birdimg from '../../assets/images/birdimg.png'
 import birdsData from "../../data/birds"
 
-function Player(props) {
+function Player({ birdNumber }) {
+
     const level = useSelector(state => state.app.level)
-    const game = useSelector(state=>state.app.game)
+    const game = useSelector(state => state.app.game)
+    const player = useRef()
+    const stopAudioFunction=()=>{
+        if (!game){
+            // player.current.audio.current.pause();
+        }
+      
+    }
+    console.log(player);
     // console.log(birdsData[level][birdNumber].image)
     console.log(birdsData)
-    console.log(props)
     console.log(level)
+    console.log(birdsData[level][birdNumber].audio)
     return (
+
         <div className="mainblock">
+            {stopAudioFunction()}
             <div>
                 <img class="bird-picture"
-                    src={game?birdsData[level][2].image:birdimg}
+                    src={game ? birdsData[level][birdNumber].image : birdimg}
                     alt="Main bird picture"></img>
             </div>
             <div>
                 <div>
-                    <p>{game?"Bird":"*****"}</p>
+                    <p>{game ? "Bird" : "*****"}</p>
                 </div>
-            <div>
-                
-                <AudioPlayer className="player"
-                    autoPlay
-                    src={birdsData[level][2].audio}
-                    
-                />
-            </div>
+                <div>
+
+                    <AudioPlayer className="player"
+                        autoPlay
+                        src={birdsData[level][birdNumber].audio}
+                        ref={player}
+                        onPause={() => stopAudioFunction()}
+
+
+                    />
+                </div>
             </div>
         </div>
     );

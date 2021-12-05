@@ -21,7 +21,7 @@ function applicationReducer(state = initialState, action) {
         case SET_GAME:
           return {
             ...state,
-            level:action.payload
+            game:action.payload
           }
       default:
         return state
