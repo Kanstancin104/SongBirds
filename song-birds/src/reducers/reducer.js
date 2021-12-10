@@ -1,8 +1,8 @@
 import { SET_SCORE, SET_LEVEL, SET_GAME } from "../actions/actions-types";
 
-const initialState = {
+export const initialState = {
   score:0,
-  level:0,
+  level:6,
   game: false
 }
 

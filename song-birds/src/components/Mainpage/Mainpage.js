@@ -5,7 +5,7 @@ import Button from './components/Button/Button';
 import About from './components/About/About';
 
 function Mainpage({
-  birdNumber
+  birdNumber, setbirdNumber, mathRandom
 }) {
     const level = useSelector(state => state.app.level)
 
@@ -15,7 +15,7 @@ function Mainpage({
           <About/>
           <List birdNumber ={birdNumber}/>
           </div>
-          <Button/>
+          <Button setbirdNumber={setbirdNumber} mathRandom={mathRandom}/>
         </div>
     );
 }

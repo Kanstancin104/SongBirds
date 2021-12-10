@@ -19,12 +19,7 @@ function Player({ birdNumber }) {
             // player.current.audio.current.pause();
         }
       
-    }
-    console.log(player);
-    // console.log(birdsData[level][birdNumber].image)
-    console.log(birdsData)
-    console.log(level)
-    console.log(birdsData[level][birdNumber].audio)
+    }  
     return (
 
         <div className="mainblock">
@@ -42,7 +37,7 @@ function Player({ birdNumber }) {
 
                     <AudioPlayer className="player"
                         autoPlay
-                        src={birdsData[level][birdNumber].audio}
+                        src={level<=5?birdsData[level][birdNumber].audio:null}
                         ref={player}
                         onPause={() => stopAudioFunction()}
 

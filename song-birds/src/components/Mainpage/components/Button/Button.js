@@ -4,11 +4,17 @@ import { setApplicationState } from '../../../../actions/actions-creator'
 import { setApplicationScore } from '../../../../actions/actions-creator'
 import { SET_GAME, SET_LEVEL, SET_SCORE } from "../../../../actions/actions-types"
 
-function Button() {
+function Button({
+    birdNumber, setbirdNumber,
+  }) {
+    const mathRandom = (max) => {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
     const game = useSelector(state => state.app.game)
     let level = useSelector(state => state.app.level)
     const dispatch = useDispatch()
     const onChain =()=>{
+        setbirdNumber(mathRandom(5))
         if (game) {
             dispatch(
                 setApplicationScore(SET_LEVEL, level += 1)
