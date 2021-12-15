@@ -1,5 +1,9 @@
-.list{
-display: flex;
-position: absolute;
-left: 150px;
+.list {
+    display: flex;
+    color: whitesmoke;
+    font-family: "Bebas Neue", cursive;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

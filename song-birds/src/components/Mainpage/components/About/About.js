@@ -1,9 +1,13 @@
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import birdsData from "../../../../data/birds";
 import './About.scss';
 
 
-function About() {
+function About({
+    birdNumber
+})
+
+ {
     const game = useSelector(state => state.app.game)
     const level = useSelector(state=>state.app.level)
 
@@ -12,13 +16,13 @@ function About() {
             {game ?
              <div>
                 <div><img
-               src={birdsData[level][2].image}>
+               src={birdsData[level][birdNumber].image} alt="levelimg">
                 </img>
-                <p>{birdsData[level][2].name}</p>
-                <p>{birdsData[level][2].species}</p>
-                <p>{birdsData[level][2].description}</p>
+                <p>{birdsData[level][birdNumber].name}</p>
+                <p>{birdsData[level][birdNumber].species}</p>
+                <p>{birdsData[level][birdNumber].description}</p>
                     </div>
-                    </div> : <div>Апісаньне</div>}
+                    </div> : <div className="description">Апісаньне</div>}
             
         </div>
     );

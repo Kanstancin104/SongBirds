@@ -4,13 +4,10 @@ import { setApplicationState, setApplicationScore } from '../../actions/actions-
 import { SET_GAME, SET_LEVEL, SET_SCORE } from "../../actions/actions-types"
 import { initialState } from "../../reducers/reducer"
 
-function EndGame({
-
-}) {
+function EndGame(
+) {
     const score = useSelector(state => state.app.score)
     const dispatch = useDispatch()
-    let level = useSelector(state => state.app.level)
-    const game = useSelector(state => state.app.game)
     const resetGame = () => {
         dispatch(
             setApplicationScore(SET_LEVEL, initialState.level)
@@ -26,9 +23,8 @@ function EndGame({
     return (
         <div className='endgame'>
             <div className='win'>Віншуем!</div>
-            <div className='score'>{score === 30 ? "Вы прайшлі віктарыну й набралі 30 points" : `Вы прайшлі віктарыну й набралі ${score} points`}</div>
-            <div onClick={() => resetGame()} className="button"></div>
-            <div className="button">Паспрабаваць яшчэ раз</div>
+            <div className='score'>{score === 30 ? "Вы прайшлі віктарыну й набралі 30 балаў" : `Вы прайшлі віктарыну й набралі ${score} балаў з 30 магчымых `}</div>
+            <div className="button" onClick={() => resetGame()}>Паспрабаваць яшчэ раз</div>
         </div>
     )
 }

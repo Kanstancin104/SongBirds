@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 import './Button.scss';
 import { setApplicationState } from '../../../../actions/actions-creator'
 import { setApplicationScore } from '../../../../actions/actions-creator'
-import { SET_GAME, SET_LEVEL, SET_SCORE } from "../../../../actions/actions-types"
+import { SET_GAME, SET_LEVEL } from "../../../../actions/actions-types"
 
 function Button({
     birdNumber, setbirdNumber,

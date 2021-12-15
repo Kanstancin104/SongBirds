@@ -1,23 +1,16 @@
 import './Header.scss';
-import {useSelector, useDispatch} from "react-redux"
-import { setApplicationState } from '../../actions/actions-creator';
-import { SET_SCORE } from '../../actions/actions-types';
+import {useSelector} from "react-redux"
 
 function Header() {
-    const score = useSelector(state=>state.app.score) 
-    const dispatch = useDispatch()
-    const changeScore = ()=>{
-      dispatch(
-        setApplicationState(SET_SCORE, score + 5)
-      )
-    }
+    const score = useSelector(state=>state.app.score)
+    
   return (
       <div className = "header">
-          <div onClick={() => changeScore()}>
+          <div className='logo'>
         BirdSongs
     </div>
-    <div>
-        {score} Score
+    <div className='score'>
+        {score} Балаў
     </div>
       </div>
     

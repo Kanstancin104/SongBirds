@@ -3,6 +3,7 @@ import { SET_GAME, SET_SCORE } from "../../../../actions/actions-types"
 import birdsData from "../../../../data/birds"
 import { setApplicationState } from '../../../../actions/actions-creator'
 import { setApplicationScore } from '../../../../actions/actions-creator'
+import './List.scss';
 
 function List({
     birdNumber
@@ -32,10 +33,6 @@ function List({
             }
         }
     }
-
-
-
-
 
     return (
         <div className="list">

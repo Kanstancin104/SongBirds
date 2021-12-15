@@ -16,7 +16,7 @@ function App() {
   console.log(birdNumber)
   return (
     <div className="section-app">
-      {level <= 5 ? <div>
+      {level <= 5 ? <div className='sectionappcontainer'>
         <Header />
         <Sections />
         <Player birdNumber={birdNumber} />

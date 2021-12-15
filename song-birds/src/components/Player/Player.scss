@@ -5,3 +5,38 @@
     justify-content: space-around;
     width: 100%;
 }
+
+.bird-picture{
+    height: 300px;
+    width: 300px;
+    border: 3px solid white;
+    border-radius: 10px;
+    // box-shadow: inset 2px 2px 5px rgb(154 147 140 / 50%), 1px 1px 5px #fff;
+}
+
+.bird-name{
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    font-family: "MyWebFont";
+    // box-shadow: inset 2px 2px 5px rgb(154 147 140 / 50%), 1px 1px 5px #fff;
+}
+
+.rhap_container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: inherit;
+    width: 100%;
+    padding: 10px 15px;
+    background: none !important;
+    // box-shadow: 0 0 3px 0 rgb(0 0 0 / 20%);
+}
+
+.rhap_time {
+    color: whitesmoke !important;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+}

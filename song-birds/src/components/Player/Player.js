@@ -1,12 +1,9 @@
 import React, {useRef} from 'react';
 import './Player.scss';
-import { useSelector, useDispatch } from "react-redux"
-import { setApplicationState } from '../../actions/actions-creator';
-import { SET_SCORE } from '../../actions/actions-types';
-import section from '../../data/section';
+import { useSelector } from "react-redux"
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import birdimg from '../../assets/images/birdimg.png'
+import bird from '../../assets/images/bird.png'
 import birdsData from "../../data/birds"
 
 function Player({ birdNumber }) {
@@ -26,12 +23,12 @@ function Player({ birdNumber }) {
             {stopAudioFunction()}
             <div>
                 <img class="bird-picture"
-                    src={game ? birdsData[level][birdNumber].image : birdimg}
-                    alt="Main bird picture"></img>
+                    src={game ? birdsData[level][birdNumber].image : bird}
+                    alt="Main bird"></img>
             </div>
             <div>
-                <div>
-                    <p>{game ? "Bird" : "*****"}</p>
+                <div className='bird-name'>
+                    <p>{game ? birdsData[level][birdNumber].name : "*****"}</p>
                 </div>
                 <div>
 

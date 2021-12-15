@@ -1,12 +1,8 @@
 import './Sections.scss';
-import {useSelector, useDispatch} from "react-redux"
-import { setApplicationState } from '../../actions/actions-creator';
-import { SET_SCORE } from '../../actions/actions-types';
+import {useSelector} from "react-redux"
 import section from '../../data/section';
 
 function Sections() {
-    const score = useSelector(state=>state.app.score) 
-    const dispatch = useDispatch()
     const level = useSelector(state=>state.app.level)
    
   return (
