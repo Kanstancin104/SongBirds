@@ -5,7 +5,7 @@ import { setApplicationScore } from '../../../../actions/actions-creator'
 import { SET_GAME, SET_LEVEL } from "../../../../actions/actions-types"
 
 function Button({
-    birdNumber, setbirdNumber,
+    setbirdNumber,
   }) {
     const mathRandom = (max) => {
         return Math.floor(Math.random() * Math.floor(max));
@@ -25,9 +25,21 @@ function Button({
         )
     }
 
+const onChangeButtonText = ()=>{
+    if (game){
+        if(level===5){
+            return "Глядзець вынікі"
+        }
+        return "Гуляць далей"
+    }
+    else{
+        return "Адгадайце"
+    }
+}
+
     return (
-        <div onClick={() => onChain()} className="button">
-            <div className="button">{game?"Гуляць далей":"Угадайте"}</div>
+        <div onClick={() => onChain()} className="firstbutton">
+            <div className="buttondiv">{onChangeButtonText()}</div>
         </div>
     );
 }

@@ -13,7 +13,7 @@ function App() {
   }
   let level = useSelector(state => state.app.level)
   const [birdNumber, setbirdNumber] = useState(mathRandom(5));
-  console.log(birdNumber)
+ 
   return (
     <div className="section-app">
       {level <= 5 ? <div className='sectionappcontainer'>

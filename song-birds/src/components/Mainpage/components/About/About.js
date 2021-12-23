@@ -5,25 +5,27 @@ import './About.scss';
 
 function About({
     birdNumber
-})
-
- {
+}) {
     const game = useSelector(state => state.app.game)
-    const level = useSelector(state=>state.app.level)
+    const level = useSelector(state => state.app.level)
 
     return (
         <div className="about">
             {game ?
-             <div>
-                <div><img
-               src={birdsData[level][birdNumber].image} alt="levelimg">
-                </img>
-                <p>{birdsData[level][birdNumber].name}</p>
-                <p>{birdsData[level][birdNumber].species}</p>
-                <p>{birdsData[level][birdNumber].description}</p>
+                <div className="aboutdiv">
+                    <div>
+                        <div className="commondiv">
+                            <img className="aboudpic"
+                                src={birdsData[level][birdNumber].image} alt="levelimg" />
+                            <div className="nazva">
+                                <p>{birdsData[level][birdNumber].name}</p>
+                                <p>{birdsData[level][birdNumber].species}</p>
+                            </div>
+                        </div>
+                        <p>{birdsData[level][birdNumber].description}</p>
                     </div>
-                    </div> : <div className="description">Апісаньне</div>}
-            
+                </div> : <div className="description">Апісаньне</div>}
+
         </div>
     );
 }
